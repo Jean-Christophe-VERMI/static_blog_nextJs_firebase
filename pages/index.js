@@ -1,9 +1,10 @@
 import Head from 'next/head'
-import { useEffect, useState } from 'react'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
 
-export default function Home({posts}) {
+import Image from 'next/image'
+import { getAllPosts } from '../lib/api'
+// import styles from '../styles/Home.module.css'
+
+export default function Home({ allPosts: { edges } }) {
   
   return (
     <>
@@ -11,20 +12,25 @@ export default function Home({posts}) {
         <title>JCVDEVPRO</title>
       </Head>
       <ul>
-        {posts.map(post => <li>
-          <h3>{post.title}</h3>
+        {edges.map(({ node }) => <li key={node.id}>
+          <h3>{node.title}</h3>
+            <Image
+              src={node.featuredImage.node.mediaItemUrl}
+              alt={node.title}
+              width={450}
+              height={300}
+            />
+          <p>{node.date}</p>
         </li>)}
       </ul>
     </>
   )
 }
 
-export async function getStaticProps () {
-  const posts = await fetch('http://jsonplaceholder.typicode.com/posts?_limit=4')
-  .then(res => res.json());
+export async function getStaticProps() {
+  const allPosts = await getAllPosts()
   return {
-    props: {
-      posts
+    props: { allPosts
     }
-  }
+  };
 }
