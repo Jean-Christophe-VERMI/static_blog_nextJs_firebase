@@ -1,8 +1,5 @@
 import Head from 'next/head'
 import { useEffect, useState, useRef } from 'react'
-import Menu from '../components/Menu/Burger'
-import Image from 'next/image'
-import { getAllPosts } from '../lib/api'
 import Accordion from '@material-ui/core/Accordion';
 import AccordionSummary from '@material-ui/core/AccordionSummary';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
@@ -10,6 +7,10 @@ import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
+
+//Components
+import Menu from '../components/Menu/Burger'
+import Footer from '../components/Footer/Footer'
 
 
 //Styles
@@ -32,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Home({ allPosts: { edges } }) {
+export default function Home() {
   const classes = useStyles();
 
   const [bgOffre, setBgOffre] = useState({});
@@ -209,29 +210,13 @@ export default function Home({ allPosts: { edges } }) {
         </div>
       </section>
 
+      <Footer />
+
       <section className={styles.realisations}>
-        <ul>
-          {edges.map(({ node }) => <li key={node.id}>
-            <h3>{node.title}</h3>
-              <Image
-                src={node.featuredImage.node.mediaItemUrl}
-                alt={node.title}
-                width={450}
-                height={300}
-              />
-            <p>{node.date}</p>
-          </li>)}
-        </ul>
+        
       </section>
       
     </>
   )
 }
 
-export async function getStaticProps() {
-  const allPosts = await getAllPosts()
-  return {
-    props: { allPosts
-    }
-  };
-}

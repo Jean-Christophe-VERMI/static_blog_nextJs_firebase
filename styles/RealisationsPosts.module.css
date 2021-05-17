@@ -1,0 +1,18 @@
+.posts {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-around;
+  padding: 5rem 2rem;
+}
+
+.post {
+  margin-bottom: 2rem;
+}
+
+.title {
+  color: #2d878f;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}

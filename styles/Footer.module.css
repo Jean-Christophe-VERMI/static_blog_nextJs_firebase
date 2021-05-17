@@ -1,0 +1,13 @@
+.footer {
+  background: #2d878f;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 3rem;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}

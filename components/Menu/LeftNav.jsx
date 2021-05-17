@@ -61,8 +61,8 @@ const LeftNav = ({ open, setOpen }) => {
     <Menu open={open}>
       <div className="nav">
         <Link onClick={() => setOpen(!open)} href='/'>Accueil</Link>
+        <Link onClick={() => setOpen(!open)} href='/realisations'>Realisations</Link>
         <Link onClick={() => setOpen(!open)} href='/blog'>Blog</Link>
-        <Link onClick={() => setOpen(!open)} href='/contact'>Contact</Link>
       </div>
     </Menu>
   )
