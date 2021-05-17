@@ -1,18 +1,56 @@
+.container {
+  background-image: url('/realisations-bg.jpg');
+  background-position: bottom right;
+  background-size: 50%;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
 .posts {
+  width: 50%;
+  max-height: 100vh;
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
-  justify-content: space-around;
-  padding: 5rem 2rem;
+  justify-content: flex-start;
+  margin-top: 4rem;
+  padding-top: 2rem;
+  overflow-y: auto;
 }
 
 .post {
-  margin-bottom: 2rem;
+  width: 70%;
+  margin: .5rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  padding: .5rem;
+  background: #b1bec6;
+  border-radius: 5px;
 }
 
+.posts::-webkit-scrollbar {
+  width: .2em;
+  }
+  
+  .posts::-webkit-scrollbar-track {
+    background-color:  #ffffff;
+  }
+  
+  .posts::-webkit-scrollbar-thumb {
+    background-color: #2d878f;
+    
+  }
+
+/* .post:hover h3 {
+  display: inline-block;
+} */
+
 .title {
-  color: #2d878f;
-  font-size: 28px;
+  color: #ffffff;
+  font-size: 22px;
   font-weight: 700;
-  margin-bottom: 1rem;
+  margin-bottom: .5rem;
+  
 }

@@ -29,7 +29,7 @@ const Menu = styled.div`
     
     &:hover {
       cursor: pointer;
-      text-decoration: underline;
+      color: #44bac4;
     }
 
   }

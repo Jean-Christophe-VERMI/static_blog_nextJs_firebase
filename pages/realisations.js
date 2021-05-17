@@ -1,5 +1,5 @@
 import React from 'react';
-import { getAllPosts } from '../lib/api'
+import { getAllRealisationPosts } from '../lib/api'
 
 //Components
 import Menu from '../components/Menu/Burger'
@@ -16,7 +16,7 @@ const Realisations = ({ allPosts: { edges } }) => (
 )
 
 export async function getStaticProps() {
-  const allPosts = await getAllPosts()
+  const allPosts = await getAllRealisationPosts()
   return {
     props: { allPosts
     }

@@ -5,10 +5,10 @@ import Image from 'next/image'
 import styles from '../../styles/RealisationsPosts.module.css'
 
 const RealisationsPosts = ({Posts}) => (
-  <div>
+  <div className={styles.container}>
     <section className={styles.posts}>
       {Posts.map(({ node }) => <div className={styles.post} key={node.id}>
-        <h3 className={styles.title}>{node.title}</h3>
+          <h3 className={styles.title}>{node.title}</h3>
           <Image
             src={node.featuredImage.node.mediaItemUrl}
             alt={node.title}
