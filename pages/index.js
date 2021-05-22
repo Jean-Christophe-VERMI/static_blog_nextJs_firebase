@@ -1,4 +1,4 @@
-import Head from 'next/head'
+import Meta from '../components/Meta'
 import { useEffect, useState, useRef } from 'react'
 import Accordion from '@material-ui/core/Accordion';
 import AccordionSummary from '@material-ui/core/AccordionSummary';
@@ -8,11 +8,6 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 
-//Components
-import Menu from '../components/Menu/Burger'
-import Footer from '../components/Footer/Footer'
-
-
 //Styles
 import styles from '../styles/Home.module.css'
 
@@ -21,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
   },
   titleAccordion: {
-    background: '#44bac4',
+    background: '#C3C0B7',
   },
   details: {
     background: '#ededeb',
@@ -31,6 +26,15 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: '200',
     fontWeight: theme.typography.fontWeightRegular,
   },
+  button: {
+    background: "#C3C0B7",
+    color: '#000000',
+    '&:hover': {
+      background: '#357680',
+      color: '#ffffff',
+   },
+  },
+
 }));
 
 export default function Home() {
@@ -43,7 +47,6 @@ export default function Home() {
   const prestaSection = useRef(null);
 
   const executeScroll = () => servicesSection.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
-
   const executeScroll2 = () => prestaSection.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
   useEffect(() => {
@@ -62,21 +65,12 @@ export default function Home() {
   
   return (
     <>
-      <Head>
-        <title>JCVDEVPRO</title>
-      </Head>
-      <section className={styles.header}>
-        <div className={styles.navbar}>
-          <Menu />
-          <h2 className={styles.responsiveTitle}>JCVDEVPRO</h2>
-        </div>
+      <Meta />
+      <section className={styles.firstSection}>
         <div className={styles.description}>
           <div>
-            <h2 className={styles.title}>JCVDEVPRO</h2>
-          </div>
-          <div>
             <p className={styles.paragraphe1}>
-              #DeveloppementWeb
+              #DéveloppementWeb
               #TransformationDigitale
             </p>
             <p className={styles.paragraphe2}>
@@ -88,14 +82,12 @@ export default function Home() {
         <div className={styles.scrollBtn}>
           <Button 
             onClick={executeScroll} 
-            variant="outlined" 
-            color="primary"
+            variant="contained" 
+            className={classes.button}
             > Services <ExpandMoreIcon />
           </Button>
         </div>
       </section>
-
-
       <section ref={servicesSection} className={styles.services} style={bgOffre}>
         <div className={styles.boxContainer}>
           <div className={styles.sideLeft}>
@@ -148,15 +140,13 @@ export default function Home() {
             <Button 
               onClick={executeScroll2} 
               variant="contained" 
-              color="primary"
+              className={classes.button}
               > Prestations <ExpandMoreIcon />
             </Button>
           </div>
           </div>
         </div>
       </section>
-
-
       <section ref={prestaSection} className={styles.offres}>
         <div className={styles.presta}>
           <div className={styles.headerPresta}>
@@ -164,34 +154,35 @@ export default function Home() {
             <h4 className={styles.price}>950 €</h4>
           </div>
           <div className={styles.separator}></div>
-          <p className={styles.prestaDescription}>L'essentiel pour présenter son activité. Un site internet professionnel avec la possibité d'editer son contenu, rajouter des articles ou des galleries d'images en toute autonomie.</p>
-          <ul className={styles.prestaDetails}>
-            <li>- Site vitrine</li>
-            <li>- Thème personnalisé</li>
-            <li>- Gestion de contenu</li>
-            <li>- Optimisation référencement</li>
-            <li>- Responsive, adapté à l'usage mobile</li>
-          </ul>
-        </div>
+          <div className={styles.prestaMain}>
+            <p className={styles.prestaDescription}>L'essentiel pour présenter son activité. Un site internet professionnel avec la possibité d'editer son contenu, rajouter des articles ou des galleries d'images en toute autonomie.</p>
+            <ul className={styles.prestaDetails}>
+              <li>- Site vitrine</li>
+              <li>- Thème personnalisé</li>
+              <li>- Gestion de contenu</li>
+              <li>- Optimisation référencement</li>
+              <li>- Responsive, adapté à l'usage mobile</li>
+            </ul>
+          </div>
+          </div>
         <div className={styles.presta}>
           <div className={styles.headerPresta}>
             <h1 className={styles.prestaName}>Globale</h1>
-            <div className={styles.priceGlobale}>
-              <h4 className={styles.price}>1490 €</h4>
-              <p className={styles.price2}>ou 950 € + 45 € / mois sur 12 mois</p>
-            </div>
+            <h4 className={styles.price}>1490 €</h4>
           </div>
           <div className={styles.separator}></div>
-          <p className={styles.prestaDescription}>Comprend les prestations essentielles, la mise en oeuvre d'une stratégie de référencement pour augmenter votre visibilité et la maintenance de votre site pendant un an.</p>
-          <ul className={styles.prestaDetails}>
-            <li>- Site vitrine</li>
-            <li>- Thème personnalisé</li>
-            <li>- Gestion de contenu</li>
-            <li>- Maintenance du site internet</li>
-            <li>- Responsive, adapté à l'usage mobile</li>
-            <li>- Stratégie de référencement globale</li>
-            <li>- Acompagnement présence réseaux sociaux</li>
-          </ul>
+          <div className={styles.prestaMain}>
+            <p className={styles.prestaDescription}>Comprend les prestations essentielles, la mise en oeuvre d'une stratégie de référencement pour augmenter votre visibilité et la maintenance de votre site pendant un an.</p>
+            <ul className={styles.prestaDetails}>
+              <li>- Site vitrine</li>
+              <li>- Thème personnalisé</li>
+              <li>- Gestion de contenu</li>
+              <li>- Maintenance du site internet</li>
+              <li>- Responsive, adapté à l'usage mobile</li>
+              <li>- Stratégie de référencement globale</li>
+              <li>- Acompagnement présence réseaux sociaux</li>
+            </ul>
+          </div>
         </div>
         <div className={styles.presta}>
           <div className={styles.headerPresta}>
@@ -199,23 +190,18 @@ export default function Home() {
             <h4 className={styles.price}>à partir de 2200 €</h4>
           </div>
           <div className={styles.separator}></div>
-          <p className={styles.prestaDescription}>Pour vendre sur internet, création d'une e-boutique avec module de paiement sécurisé.</p>
-          <ul className={styles.prestaDetails}>
-            <li>- Boutique e-commerce avec certificat SSL</li>
-            <li>- Thème personnalisé</li>
-            <li>- Module de paiement sécurisé</li>
-            <li>- Dashboard pour la gestion des commandes et livraisons</li>
-            
-          </ul>
+          <div className={styles.prestaMain}>
+            <p className={styles.prestaDescription}>Pour vendre sur internet, création d'une e-boutique avec module de gestion des commandes et livraisons. Solution de paiement sécurisé. Accompagnement au démarage de l'activité.</p>
+            <ul className={styles.prestaDetails}>
+              <li>- Boutique e-commerce avec certificat SSL</li>
+              <li>- Thème personnalisé</li>
+              <li>- Module de paiement sécurisé</li>
+              <li>- Rapports traffic, optimisation référencement </li>
+              <li>- Dashboard pour la gestion des commandes et analyse comptable </li>
+            </ul>
+          </div>
         </div>
       </section>
-
-      <Footer />
-
-      <section className={styles.realisations}>
-        
-      </section>
-      
     </>
   )
 }

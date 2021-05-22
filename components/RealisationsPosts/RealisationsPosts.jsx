@@ -8,18 +8,20 @@ const RealisationsPosts = ({Posts}) => (
   <div className={styles.container}>
     <section className={styles.posts}>
       {Posts.map(({ node }) => <div className={styles.post} key={node.id}>
-          <h3 className={styles.title}>{node.title}</h3>
+          <div className={styles.divTitle}>
+            <h3 className={styles.title}>{node.title}</h3>
+          </div>
+          <div className={styles.img}>
           <Image
-            src={node.featuredImage.node.mediaItemUrl}
-            alt={node.title}
-            width={450}
-            height={300}
-          />
+              src={node.featuredImage.node.mediaItemUrl}
+              alt={node.title}
+              width={450}
+              height={300}
+            />
+          </div>
       </div>)}
     </section>
   </div>
 );
 
 export default RealisationsPosts;
-
-

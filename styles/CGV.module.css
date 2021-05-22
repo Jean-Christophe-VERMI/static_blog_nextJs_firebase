@@ -1,0 +1,43 @@
+.container {
+  padding: 3rem 6rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  text-align: justify;
+}
+
+.firstTitle {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  font-size: 28px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.subTitle {
+  margin-top: 1rem;
+  margin-bottom: .5rem;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.h5 {
+  margin-top: 1rem;
+  margin-bottom: .5rem;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.paragraphe {
+  margin-bottom: .5rem;
+}
+
+.span {
+  font-weight: 700;
+}
+
+.list {
+  margin-top: .5rem;
+  margin-left: 2rem;
+}

@@ -1,0 +1,43 @@
+.container {
+  padding: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  color: #2d878f;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.paragrapheTitle {
+  font-size: 20px;
+  margin-bottom: 1rem;
+}
+
+.paragraphe {
+  line-height: normal;
+  margin-bottom: 1rem;
+}
+
+.firstZone {
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+.rightSide {
+  min-width: 35%;
+  margin-left: 2rem;
+}
+
+.secondZone {
+  display: flex;
+  flex-direction: column;
+}
+
+.sources {
+  margin-top: 2rem;
+}

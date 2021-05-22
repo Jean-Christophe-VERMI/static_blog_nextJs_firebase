@@ -1,3 +1,5 @@
+  
+import Layout from '../components/Layout'
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
 import '../styles/globals.css'
 
@@ -21,7 +23,9 @@ function App({ Component, pageProps }) {
     <>
       <GlobalStyle />
       <ThemeProvider theme={theme}>
-        <Component {...pageProps} />
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
       </ThemeProvider>
     </>
   )

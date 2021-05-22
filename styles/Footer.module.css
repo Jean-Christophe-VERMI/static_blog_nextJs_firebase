@@ -1,13 +1,25 @@
 .footer {
-  background: #2d878f;
+  background: #2b4b49;
+  color: #ffffff;
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  padding: 3rem;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1.5rem 4rem;
 }
 
-.col {
+.nav {
   display: flex;
-  flex-direction: column;
-  width: 50%;
+  margin-bottom: 1rem;
 }
+
+.nav a {
+  margin: .5rem 1rem;
+  text-decoration: none;
+  color: #ffffff
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}
+

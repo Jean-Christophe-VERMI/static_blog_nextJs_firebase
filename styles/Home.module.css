@@ -1,5 +1,5 @@
-.header {
-  height: 100vh;
+.firstSection {
+  height: calc(100vh - 30px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -77,22 +77,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgb(255,255,255);
-  background: linear-gradient(180deg, rgba(255,255,255,1) 56%, rgba(68,186,196,1) 56%);
+  
 }
 
 .presta {
-  background: #ffffff;
   width: 30%;
-  min-height: 60vh;
+  height: 80vh;
   margin: 1rem;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  border: 1px solid #888270;
-  border-radius: 8px;
+  border: 10px solid #357680;
   padding: 2rem;
 }
 
@@ -142,18 +139,15 @@
 }
 
 .prestaDescription {
-  margin-bottom: 1rem;
-  font-weight: 400;
-  font-style: italic;
-}
-
-.realisations {
-  margin-top: 2rem;
-  display: none;
+  margin-bottom: 2rem;
+  font-weight: 200;
+  font-size: 18px;
 }
 
 .prestaDetails {
   line-height: normal;
+  font-weight: 400;
+  font-size: 15px;
 }
 
 
