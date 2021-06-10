@@ -1,24 +1,32 @@
-import { getAllRealisationPosts } from '../lib/api'
+import styles from '../styles/Realisations.module.css'
+import Image from 'next/image'
 
-//Components
-import RealisationsPosts from '../components/RealisationsPosts/RealisationsPosts'
+const Realisations = () => (
 
-
-const Realisations = ({ allPosts: { edges } }) => {
-  return (
-  
     <div>
-      <RealisationsPosts Posts={edges} />
+      <section>
+        <h3>Restaurant Le Panoramique</h3>
+        <div className={styles.imgContainer}>
+          <div className={styles.imgProject}>
+            <Image
+              src='/Realisations/le_panoramique/desktop.PNG'
+              alt='version desktop'
+              width={700}
+              height={400}
+            />
+          </div>
+          <div className={styles.imgProject}>
+            <Image
+              src='/Realisations/le_panoramique/mobile.PNG'
+              alt='version desktop'
+              width={250}
+              height={400}
+            />
+          </div>
+        </div>
+        
+      </section>
     </div>
-  )
-}
-
-export async function getStaticProps() {
-  const allPosts = await getAllRealisationPosts()
-  return {
-    props: { allPosts
-    }
-  };
-}
+)
 
 export default Realisations;

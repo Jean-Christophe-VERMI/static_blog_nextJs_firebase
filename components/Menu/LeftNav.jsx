@@ -1,56 +1,48 @@
-// import React from 'react';
 import Link from 'next/link'
 import styled from 'styled-components';
 
 
 const Menu = styled.div`
   top: 22px;
-  left: 80px;
+  left: 55px;
   z-index: 20;
   position: fixed;
   transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(-200%)'};
   align-items: center;
   width: 345px;
   transition: transform 0.3s ease-in-out;
-
   .nav {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
   }
-
   a {
     text-decoration: none;
     text-transform: uppercase;
     color: #2d878f;
     font-size: 22px;
     font-weight: 700;
+    margin-right: 1.5rem;
     
     &:hover {
       cursor: pointer;
       color: #44bac4;
     }
-
   }
-
   img {
     padding-right: 5px;
     width: 35px;
   }
-
   @media (max-width: 768px) {
     top: 70px;
     left: 40px;
-
     .nav {
       justify-content: flex-start;
     }
-
     a {
       margin-right: 1rem;
     }
-
   }
   
 `;
@@ -61,8 +53,7 @@ const LeftNav = ({ open, setOpen }) => {
     <Menu open={open}>
       <div className="nav">
         <Link onClick={() => setOpen(!open)} href='/'>Accueil</Link>
-        <Link onClick={() => setOpen(!open)} href='/realisations'>Realisations</Link>
-        <Link onClick={() => setOpen(!open)} href='/blog'>Blog</Link>
+        <Link onClick={() => setOpen(!open)} href='/Contact'>Contact</Link>
       </div>
     </Menu>
   )

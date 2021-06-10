@@ -13,9 +13,7 @@ const StyledBurger = styled.div`
   justify-content: space-around;
   flex-flow: column nowrap;
   cursor: pointer;
-
   
-
   div {
     width: 2rem;
     height: 0.25rem;
@@ -24,38 +22,39 @@ const StyledBurger = styled.div`
     transform-origin: 1px;
     transition: all 0.3s linear;
     
-
     &:nth-child(1) {
       transform: ${({ open }) => open ? 'rotate(45deg)' : 'rotate(0)'};
     }
-
     &:nth-child(2) {
       transform: ${({ open }) => open ? 'translateX(100%)' : 'translateX(0)'};
       opacity: ${({ open }) => open ? 0 : 1};
     }
-
     &:nth-child(3) {
       transform: ${({ open }) => open ? 'rotate(-45deg)' : 'rotate(0)'};
     }
-
   }
-
   @media (max-width: 768px) {
-
     div {
       background-color: #ffffff;
     }
-
   }
-
 `;
 
 const Burger = () => {
   const [open, setOpen] = useState(false)
+
+  const handleMenu = () => {
+    setOpen(!open);
+    if(!open) {
+      setTimeout(() => {
+        setOpen(open);
+      }, 10000);
+    }
+  };
   
   return (
     <>
-      <StyledBurger open={open} onClick={() => setOpen(!open)}>
+      <StyledBurger open={open} onClick={() => handleMenu()}>
         <div />
         <div />
         <div />

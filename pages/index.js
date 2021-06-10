@@ -16,19 +16,29 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
   },
   titleAccordion: {
-    background: '#C3C0B7',
+    background: '#d9dbdb',
+  },
+  title: {
+    fontFamily: 'Nunito, sans-serif',
+    fontSize: '18px',
   },
   details: {
-    background: '#ededeb',
+    background: '#dbdad7',
+    
   },
   heading: {
     fontSize: theme.typography.pxToRem(15),
     fontWeight: '200',
     fontWeight: theme.typography.fontWeightRegular,
   },
+  content: {
+    textAlign: 'justify',
+    fontFamily: 'Nunito, sans-serif',
+    fontWeight: '400'
+  },
   button: {
-    background: "#C3C0B7",
-    color: '#000000',
+    background: '#357680',
+    color: '#ffffff',
     '&:hover': {
       background: '#357680',
       color: '#ffffff',
@@ -44,10 +54,10 @@ export default function Home() {
   const [bgPath, setBgPath] = useState('/bg_offre.png');
 
   const servicesSection = useRef(null);
-  const prestaSection = useRef(null);
-
+  const realisationsSection = useRef(null);
+  
   const executeScroll = () => servicesSection.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  const executeScroll2 = () => prestaSection.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  const executeScroll2 = () => realisationsSection.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
   useEffect(() => {
     const setBackground = () => {
@@ -68,137 +78,93 @@ export default function Home() {
       <Meta />
       <section className={styles.firstSection}>
         <div className={styles.description}>
-          <div>
             <p className={styles.paragraphe1}>
-              #DéveloppementWeb
-              #TransformationDigitale
+              JCVDEVPRO Développement web <br/>
+              & réferencement SEO
             </p>
             <p className={styles.paragraphe2}>
-              Vous êtes artisant, commerçant ou une association, vous souhaitez réaliser projet web ?
-              Faites vous conseiller et accompagner par un professionnel.
+            Je suis Jean-Christophe Vermi développeur web freelance professionnel. Je développe votre site vitrine avec Wordpress, le CMS le plus populaire au monde. Vous souhaitez une expérience de naviagation encore plus optimale avec une SPA en React ou NextJs ? Vous aimeriez lancer une boutique e-commerce ou renforcer votre présence sur le web face à la concurrence ? Quelque soit votre projet web, je vous accompagne dans sa réalisation.
             </p>
-          </div>
-        </div>
-        <div className={styles.scrollBtn}>
-          <Button 
-            onClick={executeScroll} 
-            variant="contained" 
-            className={classes.button}
-            > Services <ExpandMoreIcon />
-          </Button>
+            <div className={styles.scrollBtn}>
+              <Button 
+                onClick={executeScroll} 
+                variant="contained" 
+                className={classes.button}
+                > Services <ExpandMoreIcon />
+              </Button>
+            </div>
         </div>
       </section>
       <section ref={servicesSection} className={styles.services} style={bgOffre}>
         <div className={styles.boxContainer}>
           <div className={styles.sideLeft}>
-            <Accordion className={classes.titleAccordion} onClick={() => setBgPath('/siteweb.png')}>
+            <Accordion className={classes.titleAccordion}  onClick={() => setBgPath('/siteweb.png')}>
               <AccordionSummary
                 expandIcon={<ExpandMoreIcon />}
                 aria-controls="panel1a-content"
                 id="panel1a-header"
               >
-                <Typography>Présentez-votre activité</Typography>
+                <Typography className={classes.title}>Présentez votre activité</Typography>
               </AccordionSummary>
               <AccordionDetails className={classes.details}>
-                <Typography>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-                  sit amet blandit leo lobortis eget.
+                <Typography className={classes.content}>
+                  Présentez votre activité avec un site internet moderne, fonctionnel et optimisé pour les usages mobiles. Confier son développement à un professionnel c'est l'assurance d'un travail de qualité. Je vous guide dans l'utilisation de votre vitrine commerciale, avec le CMS Wordpress vous pouvez ensuite gérer vous même l'ajout de nouveaux contenus.
                 </Typography>
               </AccordionDetails>
             </Accordion>
-            <Accordion className={classes.titleAccordion} onClick={() => setBgPath('/web-store.png')}>
-              <AccordionSummary
-                expandIcon={<ExpandMoreIcon />}
-                aria-controls="panel1a-content"
-                id="panel1a-header"
-              >
-                <Typography>Vendez sur internet</Typography>
-              </AccordionSummary>
-              <AccordionDetails className={classes.details}>
-                <Typography>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-                  sit amet blandit leo lobortis eget.
-                </Typography>
-              </AccordionDetails>
-            </Accordion>
+            
             <Accordion className={classes.titleAccordion} onClick={() => setBgPath('/social-media.png')}>
               <AccordionSummary
                 expandIcon={<ExpandMoreIcon />}
                 aria-controls="panel1a-content"
                 id="panel1a-header"
               >
-                <Typography>Développez-votre clientèle</Typography>
+                <Typography className={classes.title}>Développez-votre clientèle</Typography>
               </AccordionSummary>
               <AccordionDetails className={classes.details}>
-                <Typography>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-                  sit amet blandit leo lobortis eget.
+                <Typography className={classes.content}>
+                  Pour renforcer votre présence sur le web il est primordial de mettre en place une stratégie SEO pour faire face à la concurrence et vous démarquer. Vous souhaitez améliorer votre visibilité sur les moteurs de recherche ou conquérir de nouveaux clients grâce aux réseaux sociaux ? Je peux vous accompagner dans cette démarche pour la réussite de votre entreprise.
                 </Typography>
               </AccordionDetails>
             </Accordion>
-            <div className={styles.scrollBtn}>
-            <Button 
-              onClick={executeScroll2} 
-              variant="contained" 
-              className={classes.button}
-              > Prestations <ExpandMoreIcon />
-            </Button>
-          </div>
+
+            <Accordion className={classes.titleAccordion} onClick={() => setBgPath('/web-store.png')}>
+              <AccordionSummary
+                expandIcon={<ExpandMoreIcon />}
+                aria-controls="panel1a-content"
+                id="panel1a-header"
+              >
+                <Typography className={classes.title}>Vendez sur internet</Typography>
+              </AccordionSummary>
+              <AccordionDetails className={classes.details}>
+                <Typography className={classes.content}>
+                  Vous avez pour ambition de vendre sur internet, avoir son site e-commerce est aujourd'hui accessible à tous les budgets. Développé avec Woocommerce vous disposerez d'un dashbord pour la gestion de vos commandes et l'ntégration d'un système de paiement sécurisé avec Paypal et Stripe. Lancez votre e-commerce avec une solution flexible, fiable et de qualité.
+                </Typography>
+              </AccordionDetails>
+            </Accordion>
+            <div className={styles.scrollBtn2}>
+              <Button 
+                onClick={executeScroll2} 
+                variant="contained" 
+                className={classes.button}
+                > Réalisations <ExpandMoreIcon />
+              </Button>
+            </div>
           </div>
         </div>
       </section>
-      <section ref={prestaSection} className={styles.offres}>
-        <div className={styles.presta}>
-          <div className={styles.headerPresta}>
-            <h1 className={styles.prestaName}>Essentielle</h1>
-            <h4 className={styles.price}>950 €</h4>
+      <section>
+        <h1 className={styles.titleRealisations}>Dernières réalisations</h1>
+        <div className={styles.realisations}>
+          <div ref={realisationsSection} id={styles.project} className={styles.panoramique}>
+            <div className={styles.urlContainer}>
+              <a className={styles.urlProject} href='https://restaurant-le-panoramique.fr' target='_blank'>https://restaurant-le-panoramique.fr</a>
+            </div>
           </div>
-          <div className={styles.separator}></div>
-          <div className={styles.prestaMain}>
-            <p className={styles.prestaDescription}>L'essentiel pour présenter son activité. Un site internet professionnel avec la possibité d'editer son contenu, rajouter des articles ou des galleries d'images en toute autonomie.</p>
-            <ul className={styles.prestaDetails}>
-              <li>- Site vitrine</li>
-              <li>- Thème personnalisé</li>
-              <li>- Gestion de contenu</li>
-              <li>- Optimisation référencement</li>
-              <li>- Responsive, adapté à l'usage mobile</li>
-            </ul>
-          </div>
-          </div>
-        <div className={styles.presta}>
-          <div className={styles.headerPresta}>
-            <h1 className={styles.prestaName}>Globale</h1>
-            <h4 className={styles.price}>1490 €</h4>
-          </div>
-          <div className={styles.separator}></div>
-          <div className={styles.prestaMain}>
-            <p className={styles.prestaDescription}>Comprend les prestations essentielles, la mise en oeuvre d'une stratégie de référencement pour augmenter votre visibilité et la maintenance de votre site pendant un an.</p>
-            <ul className={styles.prestaDetails}>
-              <li>- Site vitrine</li>
-              <li>- Thème personnalisé</li>
-              <li>- Gestion de contenu</li>
-              <li>- Maintenance du site internet</li>
-              <li>- Responsive, adapté à l'usage mobile</li>
-              <li>- Stratégie de référencement globale</li>
-              <li>- Acompagnement présence réseaux sociaux</li>
-            </ul>
-          </div>
-        </div>
-        <div className={styles.presta}>
-          <div className={styles.headerPresta}>
-            <h1 className={styles.prestaName}>E-commerce</h1>
-            <h4 className={styles.price}>à partir de 2200 €</h4>
-          </div>
-          <div className={styles.separator}></div>
-          <div className={styles.prestaMain}>
-            <p className={styles.prestaDescription}>Pour vendre sur internet, création d'une e-boutique avec module de gestion des commandes et livraisons. Solution de paiement sécurisé. Accompagnement au démarage de l'activité.</p>
-            <ul className={styles.prestaDetails}>
-              <li>- Boutique e-commerce avec certificat SSL</li>
-              <li>- Thème personnalisé</li>
-              <li>- Module de paiement sécurisé</li>
-              <li>- Rapports traffic, optimisation référencement </li>
-              <li>- Dashboard pour la gestion des commandes et analyse comptable </li>
-            </ul>
+          <div id={styles.project} className={styles.pastor}>
+            <div className={styles.urlContainer}>
+              <a className={styles.urlProject} href='https://pastor-voyance-magnetisme.com' target='_blank'>https://pastor-voyance-magnetisme.com</a>
+            </div>
           </div>
         </div>
       </section>
