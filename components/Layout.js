@@ -1,5 +1,5 @@
 //import Menu from '../components/Menu/Burger'
-import Nav from './Nav'
+import Menu from '../components/Menu/Burger';
 import Meta from './Meta'
 import Footer from '../components/Footer/Footer'
 
@@ -10,7 +10,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Meta />
-      <Nav />
+      <Menu />
       <div className={styles.container}>
         <main className={styles.main}>
           {children}

@@ -1,7 +1,7 @@
 .container {
   height: 30px;
   padding: 10px;
-  background: #357680;
+  background: #44bac4;
   color: #fff;
   display: flex;
   align-items: center;
@@ -14,7 +14,7 @@
   color: #fff;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 .nav ul {
@@ -27,7 +27,7 @@
 .nav ul li a {
   margin: 5px 15px;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 400;
   text-transform: uppercase;
   color: #ffffff
@@ -35,18 +35,4 @@
 
 .nav a:hover {
   text-decoration: underline;
-}
-
-.siteInfos {
-  display: flex;
-  align-items: flex-end;
-  flex-direction: column;
-  justify-content: flex-end;
-  margin-right: 20px;
-}
-
-.siteName {
-  font-size: 20px;
-  font-weight: 200;
-  font-style: italic;
 }
