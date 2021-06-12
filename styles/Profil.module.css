@@ -1,0 +1,15 @@
+.container {
+    position: absolute;
+    top: 22px;
+    right: 55px;
+}
+
+.profilInfos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.email {
+    margin-right: 1rem;
+}

@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import styled from 'styled-components';
 
-
 const Menu = styled.div`
   top: 22px;
   left: 55px;
@@ -48,12 +47,13 @@ const Menu = styled.div`
 `;
 
 const LeftNav = ({ open, setOpen }) => {
-
   return (
+
     <Menu open={open}>
       <div className="nav">
         <Link onClick={() => setOpen(!open)} href='/'>Accueil</Link>
-        <Link onClick={() => setOpen(!open)} href='/Contact'>Contact</Link>
+        <Link onClick={() => setOpen(!open)} href='/contact'>Contact</Link>
+        <Link onClick={() => setOpen(!open)} href='/connexion'>Connexion</Link>
       </div>
     </Menu>
   )

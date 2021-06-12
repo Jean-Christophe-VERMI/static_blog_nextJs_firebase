@@ -10,6 +10,7 @@
   background-position: bottom right;
   -webkit-animation: kenburns-top-right 5s ease-out both;
 	animation: kenburns-top-right 5s ease-out both;
+  background-color: #ffffff;
 }
 
 .responsiveTitle {
@@ -29,11 +30,12 @@
   font-size: 50px;
   font-weight: 200;
   color: #357680;
-  margin-bottom: 2rem;
+  margin: 2rem 0rem;
+  line-height: 1;
 }
 
 .paragraphe2 {
-  font-size: 20px;
+  font-size: 19px;
   font-weight: 200;
   color: #000000;
   text-align: left;
