@@ -2,16 +2,20 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link'
 import axios from 'axios';
 
-const List = () => {
+import withAuth from "../../../withAuth";
+
+const List = ({ user }) => {
+
   const [entries, setEntries] = useState([]);
+
   useEffect(async () => {
+    
     const res = await axios.get('/api/entries');
     setEntries(res.data.entriesData);
   }, []);
 
   return (
     <div>
-      <h1>Entries</h1>
       {entries.map(entry => (
         <div key={entry.id}>
           <Link href={`/admin/edit/${entry.id}`}>
@@ -24,4 +28,4 @@ const List = () => {
   );
 };
 
-export default List;
+export default withAuth(List);
