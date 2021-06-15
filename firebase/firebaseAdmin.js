@@ -1,7 +1,7 @@
 import * as admin from 'firebase-admin'
 
 export const verifyIdToken = (token) => {
-    const firebasePrivateKey = process.env.FIREBASE_PRIVATE_KEY
+    const firebasePrivateKey = process.env.NEXT_PUBLIC_FIREBASE_API_KEY
 
     if (!admin.apps.length) {
         admin.initializeApp({
