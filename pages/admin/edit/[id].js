@@ -3,11 +3,15 @@ import { useRouter } from 'next/router'
 import dashify from 'dashify';
 import axios from 'axios';
 
+
+//Styles
+import styles from '../../../styles/EditOnePost.module.css';
+
 const EditEntry = () => {
   const router = useRouter()
   const [content, setContent] = useState({
-    title: undefined,
-    body: undefined,
+    title: '',
+    body: '',
   })
 
   useEffect(async () => {
@@ -36,40 +40,49 @@ const EditEntry = () => {
       title,
       body,
     });
-  }
-
-  const onDelete = async () => {
-    const { id } = router.query;
-    await axios.delete(`/api/entry/${id}`);
     router.back();
   }
 
+  const onDelete = async () => {
+    if (confirm("Confirmer la suppression de l'article ?")) {
+      const { id } = router.query;
+      await axios.delete(`/api/entry/${id}`);
+      router.back();
+    } else {
+      return false;
+    }
+  }
+
   return (
-    <div>
-      <label htmlFor="title">Title</label>
+    <div className={styles.container}>
+      <label htmlFor="title">Titre</label>
       <input
         type="text"
         name="title"
         value={content.title}
         onChange={onChange}
+        className={styles.title}
       />
-      <label htmlFor="body">Body</label>
+      <label htmlFor="body">Article</label>
       <textarea
+        className={styles.textarea}
         name="body"
         value={content.body}
         onChange={onChange}
       />
       <button
+        className={styles.button}
         type="button"
         onClick={onSubmit}
       >
-        Submit
+        Enregister
       </button>
       <button
+        className={styles.button}
         type="button"
         onClick={onDelete}
       >
-        Delete
+        Supprimer
       </button>
     </div>
   );

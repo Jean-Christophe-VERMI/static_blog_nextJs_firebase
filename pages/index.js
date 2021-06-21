@@ -7,8 +7,6 @@ import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Button from '@material-ui/core/Button';
 
-
-
 //Styles
 import styles from '../styles/Home.module.css'
 import { makeStyles } from '@material-ui/core/styles';
@@ -78,7 +76,7 @@ export default function Home() {
             </p>
             <p className={styles.paragraphe2}>
             Je suis Jean-Christophe Vermi développeur web freelance professionnel. <br/> 
-            Je développe votre site avec Wordpress, la solution de gestion de contenu le plus populaire au monde. Mais peut-être préférerez-vous une expérience de naviagation encore plus optimale avec une SPA en React ou NextJs ?<br/><br/>Quelque soit votre projet web, site vitrine, boutique e-commerce, ou pour déveloper une stratégie de référecement, je vous accompagne dans sa réalisation.
+            Je développe votre site avec Wordpress, la solution de gestion de contenu le plus populaire au monde. Mais peut-être préférerez-vous une expérience de naviagation encore plus optimale avec une SPA en React ou NextJs ?<br/><br/>Quelque soit votre projet web, site vitrine, boutique e-commerce, ou qu'il s'agisse de mettre en place une stratégie de référecement pour améliorer votre visibilité, je vous accompagne dans sa réalisation.
             </p>
             <div className={styles.scrollBtn}>
               <Button 

@@ -1,5 +1,11 @@
 import { useRouter } from 'next/router'
 import db from '../../utils/db';
+import parse from "html-react-parser";
+import Moment from 'moment';
+import 'moment/locale/fr';
+
+//Styles
+import styles from '../../styles/Post.module.css'
 
 const Post = (props) => {
   const { entry } = props;
@@ -11,10 +17,12 @@ const Post = (props) => {
   } else {
     if (entry) {
       return (
-        <div>
-          <h1>{entry.title}</h1>
-          <h4>{entry.created}</h4>
-          <p>{entry.body}</p>
+        <div className={styles.container}>
+          <article className={styles.post}>
+            <p>{Moment(entry.created).locale('fr').format("dddd, Do MMMM YYYY")}</p>
+            <h1 className={styles.title}>{entry.title}</h1>
+            <p className={styles.content}>{parse(entry.body)}</p>
+          </article>
         </div>
       );
     } else {

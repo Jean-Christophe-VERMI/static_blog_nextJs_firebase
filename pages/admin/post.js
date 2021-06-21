@@ -2,7 +2,10 @@ import { useState } from 'react';
 import dashify from 'dashify';
 import axios from 'axios';
 
-import styles from '../../styles/EditPost.module.css';
+import withAuth from "../../withAuth";
+
+//Styles
+import styles from '../../styles/CreateNewPost.module.css';
 
 const Post = () => {
   const [content, setContent] = useState({
@@ -25,6 +28,7 @@ const Post = () => {
         name="title"
         value={content.title}
         onChange={onChange}
+        className={styles.title}
       />
 
       <label htmlFor="body">Article</label>
@@ -32,11 +36,11 @@ const Post = () => {
         name="body"
         value={content.body}
         onChange={onChange}
+        className={styles.textarea}
       />
-
-      <button onClick={onSubmit}>Enregistrer</button>
+      <button className={styles.button} onClick={onSubmit}>Enregistrer</button>
     </div>
   );
 };
 
-export default Post;
+export default withAuth(Post);

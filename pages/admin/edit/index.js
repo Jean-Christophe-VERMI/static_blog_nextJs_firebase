@@ -4,6 +4,10 @@ import axios from 'axios';
 
 import withAuth from "../../../withAuth";
 
+
+//Styles
+import styles from '../../../styles/PostListAdmin.module.css'
+
 const List = ({ user }) => {
 
   const [entries, setEntries] = useState([]);
@@ -15,7 +19,7 @@ const List = ({ user }) => {
   }, []);
 
   return (
-    <div>
+    <div className={styles.container}>
       {entries.map(entry => (
         <div key={entry.id}>
           <Link href={`/admin/edit/${entry.id}`}>
