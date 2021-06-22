@@ -13,6 +13,7 @@ export default async (req, res) => {
         ...req.body,
         created: new Date().toISOString(),
       });
+      console.log('article enregistré avec succès');
       res.status(200).json({ id });
     }
   } catch (e) {

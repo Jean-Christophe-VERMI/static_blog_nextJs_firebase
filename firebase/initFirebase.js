@@ -30,3 +30,5 @@ export default function initFirebase() {
         console.log('Firebase was successfully init.')
     }
 }
+
+
